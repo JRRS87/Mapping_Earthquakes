@@ -32,12 +32,10 @@ let sanFranAirport =
 
 // Grabbing our GeoJSON data.
 L.geoJSON(sanFranAirport, {
-  
   onEachFeature: function(feature, layer) {
     console.log(layer);
-    layer.bindPopup();
+    layer.bindPopup("<h2>" + feature.properties.city + "</h2>");
   }
-
 }).addTo(map);
 
  // We create the tile layer that will be the background of our map.
